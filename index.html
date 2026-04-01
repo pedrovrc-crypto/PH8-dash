@@ -143,10 +143,27 @@ select.fc option{background:var(--card);color:var(--t1)}
   </div>
 </div>
 </div>
+<script type="module">
+  // 1. Importação das ferramentas do Firebase
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getFirestore, doc, setDoc, getDocs, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-<script>
-// ── DADOS DA PLANILHA (002_TRESTE) ─────────────────────────────
-const PLANILHA = [
+  // 2. Sua configuração extraída do Firebase
+  const firebaseConfig = {
+    apiKey: "AIzaSyCrRZ028gtl-RoHNvebg6shdeThaguENV0",
+    authDomain: "pedro-projetos-66e72.firebaseapp.com",
+    projectId: "pedro-projetos-66e72",
+    storageBucket: "pedro-projetos-66e72.firebasestorage.app",
+    messagingSenderId: "137498455483",
+    appId: "1:137498455483:web:94a57e61e52535612e689e",
+    measurementId: "G-3YX4M7FJPT"
+  };
+
+  // 3. Inicializando o banco de dados
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Mantenha o restante do código abaixo...
   {seq:1,data:"21/03 17:01",key:"venpwqwxkd",valor:29700,produto:"AZP RM3 3 FRASCOS EQUIP",src:"valekw21",logCod:"4945",logOk:"OK",nome:"JOSE EUDES DOS SANTOS",tel:"(93) 9238-7841",dig5:"87841",ligacao:"Atendeu",pedido:"----",operador:"JAQUELANE",statusVend:"AG-ENTREGA",dataPrev:"28/04/2026",estado:"PA",statusBraip:"Agendado",rastreio:"Rastreio",doc:"701.981.522-72",endereco:"Rua Pedro Alvares Cabral, 277, Centro, Uruará - PA",obs:""},
   {seq:2,data:"23/03 13:47",key:"venk05rryw",valor:29700,produto:"AZP RM3 3 FRASCOS AFTERPAY",src:"pedrokw21",logCod:"4945",logOk:"OK",nome:"OSMANO JOSE BATISTA",tel:"(69) 9323-4508",dig5:"34508",ligacao:"Atendeu",pedido:"ENVIAR BOLETO",operador:"JAQUELANE",statusVend:"AG-ENTREGA",dataPrev:"05/04/2026",estado:"RO",statusBraip:"Agendado",rastreio:"Rastreio",doc:"290.472.422-20",endereco:"Av. Acir José Damasceno, 4560, Centro, Vale do Anari - RO",obs:"Pedro vai enviar boleto próximo à data"},
   {seq:3,data:"24/03 11:38",key:"venk05r5m3",valor:29700,produto:"AZP RM3 3 FRASCOS EQUIP",src:"valekw21",logCod:"4945",logOk:"OK",nome:"FABIANO MAXIMO CORDEIRO",tel:"(33) 9118-7921",dig5:"87921",ligacao:"Atendeu",pedido:"----",operador:"JAQUELANE",statusVend:"AG-ENTREGA",dataPrev:"25/04/2026",estado:"MG",statusBraip:"Agendado",rastreio:"Rastreio",doc:"890.769.664",endereco:"Rua Olegário Maciel, 295, Centro, Mutum - MG",obs:""},
